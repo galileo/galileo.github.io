@@ -1,10 +1,40 @@
 ---
 layout: default
 title: Dokumentacja - Workspace > php > Zarządzanie i organizacja
+published: true
 ---
 
+h1. Ogólne informacje
 
+Obecnie katalog php jest to kontenerem na wszelkie rzeczy związane językiem programowania PHP.
+Powinien zawierać wszelkie biblioteki które wykorzystywane są przez system i do których chcemy mieć globalnie dostęp
+doskonałym przykładem tutaj może być PHPUnit, CopyPasteDetector, MessDetector, Mockery i wiele wiele innych.
 
-## Witam serdecznie to jest markdown i jego struktura plików.
+h1. Struktura katalogów
 
+* libs
+** {Biblioteka}
+* sites
+** {NazwaFirmy}
+*** {StronaDlaFirmy}
+
+{Biblioteka} - Nazwa zainstalowanej biblioteki/rozszrzenia opartego na języku PHP np. [phpunit, messdetector, itp]
+{NazwaFirmy} - Aby nie pogubić się w tym co i dla kogo towrzę każda firma ma swoje miejsce na projekty np. [GalileoPrime, itp]
+
+h3. libs
+
+Katalog lib powinien zawierać 
+
+h4. Obecnie katalog lib składa się z:
+
+* codesniffer
+* messdetector
+* phpdoc
+* phpunit
+
+h3. sites
+
+Strony w swojej strukurze posiadają dodatkowy podział na firmę z jaką podjęta została współpraca.
+
+h4. Wygląd i widok katalogu frimowego {NazwaFirmy}
 
