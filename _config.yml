@@ -1,3 +1,4 @@
 name: Galileo Prime Dokumentacja procesu zarządzania
 markdown: redcarpet
 pygments: true
+baseurl: /
