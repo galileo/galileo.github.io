@@ -57,11 +57,26 @@ Ogólnie przyjęta domyślna konwencje sa dwie.
 
 h5. Tagi
 
-# Status
-# Technologie
-# System kontroli wersji
-# 5s - czerwona
-# Technologie frontend 
+# Status - *[globalne_tagi]*
+# Technologie serwerow - *[żółty]*
+** Drupal
+** Sylius
+** Symfony 2.1
+** Symfony 2.2
+** Symfony 2.3
+# System kontroli wersji - *[purpurowy]*
+** GitHub
+** BitBucket
+** Bazaar
+# 5s - *[czerwony]*
+# Technologie frontend - *[błękitny]*
+** BlueTemplate
+** Bootstrap 3
+** Foundation 5
+# Publikacja - *[zielony]*
+** Deployed
+** GitHub Pages
+** PhpStorm Deploy
 
 h5. Globalne tagi
 
