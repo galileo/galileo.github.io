@@ -27,7 +27,9 @@ Główna strukutra katalogu dzieli się na dwie główne części *libs* oraz *s
 
 h3. libs
 
-Katalog lib powinien zawierać 
+Katalog lib powinien zawierać wszystkie biblioteki które są wykorzystywane globalnie przez system lub przez część projektów.
+
+Dzięki temu mamy dostęp do komend typu @phpunit, phpdoc, phpcpd@
 
 h4. Obecnie katalog lib składa się z:
 
