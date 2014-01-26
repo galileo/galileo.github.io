@@ -1,0 +1,110 @@
+---
+layout: default
+title: Instalacja PHPUnit
+description: Sposób instalacji biblioteki phpunit na OSX
+---
+
+h1. Instalacja biblioteki PhpUnit
+
+Spsobów instalacji i idealne ustawienia ich jest pewnie tyle ilu jest użytkowników. Jako że ta dokumentacja jest tylko i wyłącznie dla mnie, to przedstawiam swój sposób zarządzania i utrzymywania bibliotek php.
+
+h2. Wymagania
+
+
+Aby zainstalować PHPUnit powinniśmy mieć skonfigurowane globalnie *composer*
+
+* Composer - "instalacja":/2014/01/27/instalacja-composer.html
+* OSX 10.9
+
+h2. Instalacja
+
+Wykonujemy komendę
+
+@cd ~/workspace/php/libs/ && composer create-project phpunit/phpunit phpunit@
+
+{% highlight bash %}
+Installing phpunit/phpunit (3.7.29)
+  - Installing phpunit/phpunit (3.7.29)
+    Loading from cache
+
+Created project in phpunit
+Loading composer repositories with package information
+Initializing PEAR repository http://pear.php.net
+Installing dependencies (including require-dev)
+  - Installing pear-pear.php.net/xml_util (1.2.1)
+    Downloading: 100%
+  - Installing pear-pear.php.net/console_getopt (1.3.1)
+    Downloading: 100%
+  - Installing pear-pear.php.net/structures_graph (1.0.4)
+    Downloading: 100%
+  - Installing pear-pear.php.net/archive_tar (1.3.11)
+    Downloading: 100%
+  - Installing pear-pear.php.net/pear (1.9.4)
+    Downloading: 100%
+  - Installing phpunit/php-text-template (1.1.4)
+    Loading from cache
+
+  - Installing phpunit/php-token-stream (1.2.1)
+    Loading from cache
+
+  - Installing phpunit/php-file-iterator (1.3.4)
+    Loading from cache
+
+  - Installing phpunit/php-code-coverage (1.2.13)
+    Loading from cache
+
+  - Installing phpunit/php-timer (1.0.5)
+    Loading from cache
+
+  - Installing phpunit/phpunit-mock-objects (1.2.3)
+    Loading from cache
+
+  - Installing symfony/yaml (v2.4.1)
+    Downloading: 100%
+
+phpunit/php-code-coverage suggests installing ext-xdebug (>=2.0.5)
+Writing lock file
+Generating autoload files
+
+{% endhighlight %}
+
+Tak wykonana komenda stworzy nam projekt *phpUnit* w naszym katalogu z bibliotekami php.
+Można go znaleźć dokładnie tutaj *~/workspace/php/libs/phpunit*
+
+h2. Rejestrowanie phpunit
+
+Oczywiście w tej chwili jeszcze w konsoli nie możemy użyć komendy @phpunit@ musimy poinformować jaki plik wsadowy ma wykonać.
+
+Aby tego dokonać najpierw musimy zainstalować się upewnić że mamy odpowiednio ustawiony *.bash_profile*.
+
+
+h2. Aktualizacja
+
+Prościej się nie da chyba. Odpalamy komende *composer update*
+
+@cd ~/workspace/php/libs/phpunit && composer update@
+
+{% highlight php %}
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Removing symfony/yaml (v2.3.6)
+  - Installing symfony/yaml (v2.4.1)
+    Loading from cache
+
+  - Removing phpunit/phpunit (3.7.28)
+  - Installing phpunit/phpunit (3.7.29)
+    Loading from cache
+
+Writing lock file
+Generating autoload files
+
+{% endhighlight %}
+
+h5. Changelog
+*  %{color:#D90006}*2014.01.26*% - Aktualizacja do wersji: *3.7.29*
+
+{% highlight php %}
+galileo$ phpunit --version
+PHPUnit 3.7.29 by Sebastian Bergmann.
+{% endhighlight %}
+
