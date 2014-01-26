@@ -27,14 +27,16 @@ Główna strukutra katalogu dzieli się na dwie główne części *libs* oraz *s
 
 h3. libs
 
-Katalog lib powinien zawierać 
+Katalog lib powinien zawierać wszystkie biblioteki które są wykorzystywane globalnie przez system lub przez część projektów.
+
+Dzięki temu mamy dostęp do komend typu @phpunit, phpdoc, phpcpd@
 
 h4. Obecnie katalog lib składa się z:
 
 * codesniffer
 * messdetector
 * phpdoc
-* phpunit
+* phpunit - "instalacja":phpunit-install
 
 h3. sites
 
@@ -87,3 +89,4 @@ h5. Globalne tagi
 * przestarzały - leży sobie to na dysku ale nikt nie wie co to po co to i jak to dzialalo. taki projekt powinien dostac także tag &s aby podjac decyzję co z tym dalej robimy.
 
 
+[phpunit-install]/2014/01/26/instalacja-phpunit.html
