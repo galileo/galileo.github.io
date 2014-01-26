@@ -44,6 +44,10 @@ h4. Wygląd i widok katalogu frimowego {NazwaFirmy}
 
 Katalog firmowy powinien zawierac wszystkie projekty jakie dla danej firmy tworze.
 
+@Przykład:@
+
+!/images/show-of-tagged-catalog.png!
+
 h5. Konwencja nazewnictwa
 
 Ogólnie przyjęta domyślna konwencje sa dwie.
@@ -59,10 +63,12 @@ h5. Tagi
 # 5s - czerwona
 # Technologie frontend 
 
-H5. Globalne tagi
+h5. Globalne tagi
 
-@todo przeniesc do sekcji globalne tagi
+@#todo przeniesc do sekcji globalne tagi@
 
 * aktywny - tylko 3 projekty mogą posiadać owy status praca nad większ ilością projektów w jednym czasie mija sie z celem.
 * wstrzymany
 * przestarzały - leży sobie to na dysku ale nikt nie wie co to po co to i jak to dzialalo. taki projekt powinien dostac także tag &s aby podjac decyzję co z tym dalej robimy.
+
+
