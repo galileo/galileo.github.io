@@ -9,6 +9,10 @@ site: Dokumentacja systemu programowania
         <ul class="posts">
 
             <li><span><a href="{{'workspace_struktura_php.html'}}">Dokumentacja struktury katalogu php</a></h4></span></span></li>
+
+            {% for post in site.posts %}
+            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>
