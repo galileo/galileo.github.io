@@ -1,0 +1,64 @@
+---
+layout: post
+date:   2014-02-11 23:10:39
+categories: vagrant php
+title: JavaScript journey - Part 2 - String jako Szablon HTML
+description: Poznawanie JavaScriptu
+---
+
+
+h1. JavaScript - Szablony HTML
+
+Czasami chcemy sobie zrobić szablon html który nastepnie będziemy wypełniać danymi.
+
+Taką możliwość daje nam np. bibliotek `_underscore.js`
+
+http://underscorejs.org/#template
+
+h2. Po swojemu
+
+Underscore i jego template są jak najbardziej potężnym narzędziem ale czasami nie potrzebujemy zaprzegać całego frameworka
+js'owego tylko po to aby zrobić sobie szablon a można to zrobić całkiem prosto.
+
+Dodamy nową funkcjonalność do obiektu String, dzięki czemu wszystkie nasze stringi będą mogły być traktowane jako szablony.
+
+Przykład wywołania:
+
+{% highlight html %}
+
+var template = '<div><h3>{firstName} {lastName}</h3><p>Role: {role}</p></div>';
+
+var data = {
+firstName: "Galileo",
+lastName: "Prime",
+role: "Developer"
+}
+
+template.supplant(data);
+"<div><h3>Galileo Prime</h3><p>Role: Developer</p></div>"
+
+{% endhighlight %}
+
+Tworzenie metody:
+
+{% highlight html %}
+
+if (typeof String.prototype.supplant !== 'function') {
+  String.prototype.supplant = function (o) {
+    return this.replace(/{([^{}]*)}/g,
+      function (a, b) {
+        var r = o[b];
+        return typeof r === 'string' ?
+          r : a;
+      });
+  }
+}
+
+{% endhighlight %}
+
+
+Jak dla mnie ekstra :D
+
+@resource
+
+http://yuiblog.com/crockford/

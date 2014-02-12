@@ -55,3 +55,8 @@ priceContainer.zloty
 {% endhighlight %}
 
 h3. Myślę że to fajny przykład użycia JavaScript'u
+
+
+@resource
+
+http://yuiblog.com/crockford/
