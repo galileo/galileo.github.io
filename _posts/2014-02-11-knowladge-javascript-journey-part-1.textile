@@ -1,8 +1,9 @@
 ---
 layout: post
 date:   2014-02-11 23:10:39
-categories: vagrant php
-title: JavaScript journey part 1
+categories: [knowladge, javascript, journey]
+tags: [JavaScript, Crockford, GoodParts]
+title: JavaScript Journey - Part 1 - Dynamiczne dodawanie właściwości
 description: Poznawanie JavaScriptu
 ---
 
