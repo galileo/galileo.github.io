@@ -1,0 +1,57 @@
+---
+layout: post
+date:   2014-02-11 23:10:39
+categories: vagrant php
+title: JavaScript journey part 1
+description: Poznawanie JavaScriptu
+---
+
+
+h1. JavaScript - niepoznany
+
+Ogólnie narzekanie na JavaScript nie ma końca a coraz więcej wokół tego języka jest szumu więc postanowiłem się zainteresowąć nieco bardziej tym językiem i z każdą nową weidzą jaką otrzymuje na temat tego języki coraz bardziej mi się on podoba.
+
+Zawsze jest tak że wszystko co wykracza pozna nasz światopogląd i czego nie rozumiem y jest złe i do bani dlatego trzeba to poznać. take też robie z JS'em.
+
+Oto dzisiejsze przykład dla mnie i ewentualnych potomnych aby móc do tego wrócic
+
+{% highlight javascript %}
+// definujemy sobie jakiś obiekt
+
+priceContainer = {zloty: 10, exchangeRate: 0.25};
+
+// korzystamy z js'owego dodawania propertasów i dzięki temu możemy binodwać sobie dynamicznie te wartośći.
+Object.defineProperty(priceContainer, 'euro', {
+get: function() {
+return this.zloty * this.exchangeRate;
+},
+set: function (value) {
+this.zloty = value / this.exchangeRate;
+}
+});
+
+priceContainer.euro
+// >> 2.5
+priceContainer.zloty
+// >> 10
+
+// ustawiająć euro na 10 automatycznie zmienimy tez złotówki
+priceContainer.euro = 10
+
+priceContainer.euro
+// >> 10
+priceContainer.zloty
+// >> 40
+
+// zmieniając złotówki zmienamy też euro
+priceContainer.zloty = 60
+
+priceContainer.euro
+// >> 15
+priceContainer.zloty
+// >> 60
+
+
+{% endhighlight %}
+
+h3. Myślę że to fajny przykład użycia JavaScript'u

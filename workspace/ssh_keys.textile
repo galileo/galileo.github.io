@@ -1,0 +1,49 @@
+---
+layout: default
+title: Dokumentacja - Workspace > php > Zarządzanie i organizacja
+published: true
+---
+
+
+h1. Klucze ssh
+
+h2. Główne cele
+
+Głównym celem jest usystematyzowanie i zarządzanie kluczami ssh, w taki sposób aby wiedzieć gdzie posiadam klucze
+publiczne oraz te prywatne wraz z konwencja nazewnictwa i tego co i jak można zrobić z danymi plikami
+
+h2. Generacja klucza
+
+Podążamy za tutorialem github'a
+
+ssh-keygen -t rsa -C "your_email@example.com"
+
+h3. Konwencja nazwenictwa
+
+Do czego klucz służy i czy mamy jakiś login w danym miejscu czyli mając konto na githubie (moje. galileo) klucz dla
+githuba będzie następujący.
+
+github_galileo
+
+Czyli wygenerują się dwa klucze.
+
+github_galileo // prywatny
+github_galileo.pub // publiczny
+
+publiczny przenoszę sobie do katalogu.
+
+~/public_ssh_keys
+
+Jest to miejsce w którym przechowuję wszystkie klucze publiczne.
+prywatne natomiast zostają na swoim miejscu w ~/.ssh
+
+Aby uzyskać dostęp na github musimy wkleić do niego nasz klucz publiczny.
+
+Więc podążając za przykładem.
+
+pbcopy < ~/public_ssh_keys/github-galileo.pub
+
+@Todo Dowiedzieć się 
+W githubie jest jeszcze informacja aby wykonać komendę na kluczu prywatnym. Niestety nie wiem jak to działa i po co to.
+
+ssh-add github-galileo
