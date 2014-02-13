@@ -1,12 +1,11 @@
 ---
-layout: post
+layout: post_javascript_journey
 date:   2014-02-12 23:56:39
 categories: [knowladge, javascript, journey]
 tags: [JavaScript, Crockford, GoodParts]
 title: JavaScript Journey - Part 2 - String jako Szablon HTML
 description: Poznawanie JavaScriptu
 ---
-
 
 h1. JavaScript - Szablony HTML
 

@@ -1,0 +1,12 @@
+---
+layout: post_javascript_journey
+date:   2014-02-13 12:56:39
+categories: [knowladge, javascript, journey]
+tags: [knowladge, JavaScript, GoodParts]
+title: DRAFT - JavaScript Journey - Part 2 - Liczby i ich właściwiości
+description: Poznawanie JavaScriptu
+published: false
+---
+
+h1. Liczby i ich właściwości.
+

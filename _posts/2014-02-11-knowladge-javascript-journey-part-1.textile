@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_javascript_journey
 date:   2014-02-11 23:10:39
 categories: [knowladge, javascript, journey]
 tags: [JavaScript, Crockford, GoodParts]
