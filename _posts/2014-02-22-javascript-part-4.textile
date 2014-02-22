@@ -1,0 +1,67 @@
+---
+layout: post_javascript_journey
+date:   2014-02-22 10:47:39
+categories: [knowladge, javascript, journey]
+tags: [knowladge, JavaScript, GoodParts]
+title: JavaScript Journey - Part 4 - Operatory logiczne
+description: Poznawanie JavaScriptu
+published: true
+---
+
+h1. Operatory logiczne
+
+Jak się można domyślić operatory logiczne jak najbardziej istnieją w JavaScript'cie jednak zachowują się one odrobinę inaczej niż do tego przywykliśmy w innych językach programowania. Dla przykładu w php operatory logiczne niezależnie od tego co otrzymują jako parametr to w efekcie końcowym wartość operacji zawsze jest typu boolean. Natomiast JavaScript
+produkuje wartość. Co to oznacza?
+
+h3. LUB
+
+{pierwszeWyrażenie} || {drugieWyrażenie}
+
+Lub działa w większości języków w taki sposób że gdy pierwszy warunek jest prawidziwy to kolejny już nie jest sprawdzany
+ponieważ w efekcie końcowym i tak nie wpłynie to na wartość tego wyrażenia.
+
+Jednak jest mała różnica w naszych porównywanych językach. PHP z tego wyrażenia zwróći wartość (boolean)true natomiast
+JavaScript zwrtóci nam po prostu {wartośćPierwszegoWyrażenia}
+
+A w praktyce ?
+
+PHP
+
+var_dump("super" || "klocki");
+// >> boolean true
+
+JavaScript
+
+"super" || "klocki"
+// >> "super"
+
+Oczywiście to nie wpływa na wartość logiczną tego wyrażenia bo ono także jest true.
+
+h3. I
+
+Zasada z "i" jest dokładnie taka sama tylko że wartość prdukowana w JS w przypadku gdy pierwsze wyrażenie jest prawdziwe
+produtkowane jest drugie wyrażenie. Oczywiście gdy pierwsza wartość wyrażenia jest nieprawdziwa to nie ma sensu przetwarzać
+drugiego wyrażenia i produkować z niego wartości bo i tak nie będzie miało to wpływ na zwróconą wartość.
+
+Co to oznacza w praktyce?
+
+PHP
+
+false && "klocki"
+// >> boolean false
+
+"system" && "klocki"
+// >> boolean true
+
+"system" && false
+// >> boolean false
+
+
+JavaScript
+
+falsy && "klocki"
+// >> falsy
+
+"system" && "klocki"
+// >> "klocki"
+
