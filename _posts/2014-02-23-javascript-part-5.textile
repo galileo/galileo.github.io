@@ -1,0 +1,95 @@
+---
+layout: post_javascript_journey
+date:   2014-02-23 20:42:00
+categories: [knowladge, javascript, journey]
+tags: [knowladge, JavaScript, GoodParts]
+title: JavaScript Journey - Part 5 - Prototypowe dodawanie funkcjonalności
+description: Poznawanie JavaScriptu
+published: true
+---
+
+h1. Obiekty i ich tworzenie
+
+
+Tworząc obiekt
+{% highlight javascript %}
+function Status(status) {
+  this.status = status;
+};
+{% endhighlight %}
+
+{% highlight javascript %}
+var Utworzony = new Status('Utworzony');
+
+var Anulowany = new Status('Anulowany');
+
+{% endhighlight %}
+
+Mozemy dodac metodę do każdego obiektu osobno dodajmy więc ja do obiektu Anulowany
+
+{% highlight javascript %}
+Anulowany.getStatus = function () {
+  return this.status;
+};
+{% endhighlight %}
+
+Odpalając
+
+{% highlight javascript %}
+Anulowany.getSataus();
+// "Anulowany"
+
+{% endhighlight %}
+
+No tak ale w tej sytuacji nadal obiekt Utworzony nie posiada metody getStatus()
+
+{% highlight javascript %}
+
+Utowrzony.getStatus();
+// Exception method not exists
+
+{% endhighlight %}
+
+
+Możemy jednak i w tym momencie dodać do wszystkich obiektów stworzonych z obiektu Status metodę getStatus() aby się nie pomylić która metoda pochodzi skąd nazwijmy ją getStatusPrototyped()
+
+{% highlight javascript %}
+
+Status.prototype.getStatusPrototyped = function () {
+  return this.status;
+}
+
+{% endhighlight %}
+
+Odpalając w tym momencie getStatusPrototyped() na wcześniej stowrzonych obiektach otrzymujemy takie wyniki.
+
+{% highlight javascript %}
+
+Anulowany.getStatusPrototyped();
+// "Anulowany"
+
+Utworzony.getStatusPrototyped();
+// "Utworzony"
+
+{% endhighlight %}
+
+h3. JavaScript pozwala nam również dodanie każdej funkcjonalności do każdego obiektu.
+
+
+Stwórzmy obiekt który nie wie nic na temat obiektu Status. Natomiast posiada parametr 'status':
+
+{% highlight javascript %}
+
+var Nieobslugiwany = {status: "Nieobslugiwany"};
+
+{% endhighlight %}
+
+Aby pobrać status możemy zaaplikować metodę obiektu Status do obiektu Nieobslugiwanego w następujący sposób.
+
+{% highlight javascript %}
+
+Status.prototype.getStatusPrototyped.apply(Nieobslugiwany);
+// "Nieobslugiwany"
+
+{% endhighlight %}
+
