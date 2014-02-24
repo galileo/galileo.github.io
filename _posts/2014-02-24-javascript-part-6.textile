@@ -1,0 +1,57 @@
+---
+layout: post_javascript_journey
+date:   2014-02-24 20:42:00
+categories: [knowladge, javascript, journey]
+tags: [knowladge, JavaScript, GoodParts]
+title: JavaScript Journey - Part 6 - Rozszerzanie domyślnych funkcjonalnośći
+description: Poznawanie JavaScriptu
+published: true
+---
+
+h1. Rozszerzanie funkcjonalności języka
+
+JavaScirpt nie jest językiem idealnym i nie wszystko w swojej podstawowej wersji posiada. Jednak możliwości rozszerzenia funkcjonalnośći, są przerażająco wielkie. W tym języku nie istnieją prawie żadne ograniczenia.
+
+Jako że głownym budulcem wszystkiego jest Funkcja więc rozszerzając Function możemy rozszerzyć każdą funkcję w JS.
+
+Function.prototype.{nazwaFunkcji} doda nam metody do każdej możliwej instancji tej funkcji. Jednak sposób taki nie jest zbyt estetyczny dlatego możemy sobie tę sprawę nieco ułatwić. Stworzymy metode która będzie nam tworzyła metody z nazwy i będzie nieco bardziej wskazywała na to co robi. Więc dodajmy do prototypu metode method któ®a jako parametry przyjmnie nazwę i ciało tego co ewentualnie ma w późniejszym czasie wykonać.
+
+{% highlight javascript %}
+
+if (Function.prototype.method === undefined) {
+  Function.prototype.method = function (methodName, callback) {
+      this.prototype[methodName] = callback;
+      return this;
+  };
+}
+
+{% endhighlight %}
+
+Teraz w łatwy sposób możemy dodawać metody do naszych funkcjonalności.
+
+Np. w JS obiekt String nie posiada metody trim. Możemy to w bardzo łatwy sposób naprawić
+
+{% highlight javascript %}
+
+String.method('trim', function () {
+  return this.replace(/^\s+|\s+$/g, '');
+});
+
+{% endhighlight %}
+
+I można teraz używać tego na każdym stringu.
+
+{% highlight javascript %}
+
+' asdasd '
+// " asdasd "
+
+' asdasd '.trim();
+// "asdasd"
+
+{% endhighlight %}
+
+
+Zródło
+
+JavaScript The Good Parts
