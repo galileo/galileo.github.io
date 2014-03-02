@@ -72,4 +72,18 @@ falsy && "klocki"
 
 "system" && "klocki"
 // >> "klocki"
+{% endhighlight %}
+
+
+@[02.03. 2014] Update:@
+
+Jeśli chcielibyśmy aby operatory logiczne || i && zachowywały się identycznie jak w znanych nam językach, czyli zwracały wartiść boolowską. Powinniśmy rzutować wartości na boola. Aby to zrobić należy użyć operatora !!.
+
+{% highlight javascript %}
+true && !!"klocki"
+// >> true
+
+!!"system" || false
+// >> true
+{% endhighlight %}
 
