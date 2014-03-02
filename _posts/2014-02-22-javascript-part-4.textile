@@ -13,9 +13,9 @@ h1. Operatory logiczne
 Jak się można domyślić operatory logiczne jak najbardziej istnieją w JavaScript'cie jednak zachowują się one odrobinę inaczej niż do tego przywykliśmy w innych językach programowania. Dla przykładu w php operatory logiczne niezależnie od tego co otrzymują jako parametr to w efekcie końcowym wartość operacji zawsze jest typu boolean. Natomiast JavaScript
 produkuje wartość. Co to oznacza?
 
-h3. LUB
+h3. Wyrażenie logiczne @LUB@
 
-{pierwszeWyrażenie} || {drugieWyrażenie}
+@{pierwszeWyrażenie} || {drugieWyrażenie}@
 
 Lub działa w większości języków w taki sposób że gdy pierwszy warunek jest prawidziwy to kolejny już nie jest sprawdzany
 ponieważ w efekcie końcowym i tak nie wpłynie to na wartość tego wyrażenia.
@@ -25,19 +25,25 @@ JavaScript zwrtóci nam po prostu {wartośćPierwszegoWyrażenia}
 
 A w praktyce ?
 
-PHP
+h4. PHP
 
+{% highlight php %}
 var_dump("super" || "klocki");
 // >> boolean true
+{% endhighlight %}
 
-JavaScript
+h4. JavaScript
 
+{% highlight javascript %}
 "super" || "klocki"
 // >> "super"
+{% endhighlight %}
 
 Oczywiście to nie wpływa na wartość logiczną tego wyrażenia bo ono także jest true.
 
-h3. I
+h3. Wyrażenie logiczne @I@
+
+@{pierwszeWyrażenie} && {drugieWyrażenie}@
 
 Zasada z "i" jest dokładnie taka sama tylko że wartość prdukowana w JS w przypadku gdy pierwsze wyrażenie jest prawdziwe
 produtkowane jest drugie wyrażenie. Oczywiście gdy pierwsza wartość wyrażenia jest nieprawdziwa to nie ma sensu przetwarzać
@@ -45,20 +51,22 @@ drugiego wyrażenia i produkować z niego wartości bo i tak nie będzie miało 
 
 Co to oznacza w praktyce?
 
-PHP
+h4. PHP
 
-false && "klocki"
+{% highlight php %}
+var_dump(false && "klocki");
 // >> boolean false
 
-"system" && "klocki"
+var_dump("system" && "klocki");
 // >> boolean true
 
 "system" && false
 // >> boolean false
+{% endhighlight %}
 
+h4. JavaScript
 
-JavaScript
-
+{% highlight javascript %}
 falsy && "klocki"
 // >> falsy
 
