@@ -1,0 +1,59 @@
+---
+layout: post_javascript_journey
+date:   2014-03-03 11:32:00
+categories: [knowladge, javascript, journey]
+tags: [knowladge, JavaScript, GoodParts]
+title: JavaScript Journey - Part 8 - Prywatne zmienne
+description: Poznawanie JavaScriptu
+published: true
+---
+
+h1. Prywatne zmienne
+
+W jednym z poprzednich przykładów zaprezentowałem jak stworzyć metodę pobierającą informacje z obietku. Nie była ona jednak zbyt użyteczna bo wartość zmienne jako że była ona publiczna można było się dostać bezpośrednio bez stworzonej przezemnie metody dostępowej więc wartość biznesowa takiego rozwiązania jest znikoma.
+
+Wyobraźmy sobie że tak było by stworzone oprogramowanie naszego konta gdzie posiadamy Account i możemy pobrać z niego stan naszego konta. A co gorsza w nieprzewidywane sposób zmienić jego stan.
+
+Więc jak stworzyć zmienne prwyatne dla w takim razie. Przyjrzyjmy się konstrukcji @Closure@ która tutaj będzie niezwykle pomocna.
+
+{% highlight javascript %}
+
+var account = function(initialSaldo){
+  var saldo = initialSaldo;
+  return {
+    supply : function(ammount) {
+      saldo += ammount;
+    },
+    getSaldo : function() {
+      return saldo;
+    }
+  }
+}
+
+{% endhighlight %}
+
+Iniciujemy sobie nasze konto
+
+{% highlight javascript %}
+
+var myAccount = account(213);
+
+{% endhighlight %}
+
+Dzięki temu posiadamy dostęp tylko do zmiennych które zostały zwrócone w return jako obiekt. Możemy się odwoływać w następujący sposób.
+
+{% highlight javascript %}
+
+myAcoount.getSaldo();
+// >> 213
+
+myAccount.supply(23);
+
+myAccount.getSaldo();
+// >> 236
+
+{% endhighlight %}
+
+@Bibliografia i źródła inspiracji@
+
+"JavaScript: Mocne Strony [eng. JavaScript The Good Parts]":http://helion.pl/view/5661U/jscmoc.htm
