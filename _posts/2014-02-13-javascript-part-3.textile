@@ -10,3 +10,9 @@ published: false
 
 h1. Liczby i ich właściwości.
 
+
+@Bibliografia i źródła inspiracji@
+
+"JavaScript: Mocne Strony [eng. JavaScript The Good Parts]":http://helion.pl/view/5661U/jscmoc.htm
+
+"Chapter 2: And Then There Was JavaScript":http://yuiblog.com/crockford/

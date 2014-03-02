@@ -58,6 +58,8 @@ priceContainer.zloty
 h3. Myślę że to fajny przykład użycia JavaScript'u
 
 
-@resource
+@Bibliografia i źródła inspiracji@
 
-http://yuiblog.com/crockford/
+"JavaScript: Mocne Strony [eng. JavaScript The Good Parts]":http://helion.pl/view/5661U/jscmoc.htm
+
+"Chapter 2: And Then There Was JavaScript":http://yuiblog.com/crockford/

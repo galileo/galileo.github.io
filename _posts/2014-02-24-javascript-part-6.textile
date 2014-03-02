@@ -12,9 +12,9 @@ h1. Rozszerzanie funkcjonalności języka
 
 JavaScirpt nie jest językiem idealnym i nie wszystko w swojej podstawowej wersji posiada. Jednak możliwości rozszerzenia funkcjonalnośći, są przerażająco wielkie. W tym języku nie istnieją prawie żadne ograniczenia.
 
-Jako że głownym budulcem wszystkiego jest Funkcja więc rozszerzając Function możemy rozszerzyć każdą funkcję w JS.
+Jako że głownym budulcem wszystkiego jest Funkcja więc rozszerzając @Function@ możemy rozszerzyć każdą funkcję w JS.
 
-Function.prototype.{nazwaFunkcji} doda nam metody do każdej możliwej instancji tej funkcji. Jednak sposób taki nie jest zbyt estetyczny dlatego możemy sobie tę sprawę nieco ułatwić. Stworzymy metode która będzie nam tworzyła metody z nazwy i będzie nieco bardziej wskazywała na to co robi. Więc dodajmy do prototypu metode method któ®a jako parametry przyjmnie nazwę i ciało tego co ewentualnie ma w późniejszym czasie wykonać.
+@Function.prototype.{nazwaFunkcji}@ doda nam metody do każdej możliwej instancji tej funkcji. Jednak sposób taki nie jest zbyt estetyczny dlatego możemy sobie tę sprawę nieco ułatwić. Stworzymy metode która będzie nam tworzyła metody z nazwy i będzie nieco bardziej wskazywała na to co robi. Więc dodajmy do prototypu metode @method@ która jako parametry przyjmnie nazwę i ciało tego co ewentualnie ma w późniejszym czasie wykonać.
 
 {% highlight javascript %}
 
@@ -52,6 +52,6 @@ I można teraz używać tego na każdym stringu.
 {% endhighlight %}
 
 
-Zródło
+@Bibliografia i źródła inspiracji@
 
-JavaScript The Good Parts
+"JavaScript: Mocne Strony [eng. JavaScript The Good Parts]":http://helion.pl/view/5661U/jscmoc.htm

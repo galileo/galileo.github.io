@@ -57,6 +57,8 @@ if (typeof String.prototype.supplant !== 'function') {
 {% endhighlight %}
 
 
-@resource
+@Bibliografia i źródła inspiracji@
 
-http://yuiblog.com/crockford/
+"JavaScript: Mocne Strony [eng. JavaScript The Good Parts]":http://helion.pl/view/5661U/jscmoc.htm
+
+"Chapter 2: And Then There Was JavaScript":http://yuiblog.com/crockford/

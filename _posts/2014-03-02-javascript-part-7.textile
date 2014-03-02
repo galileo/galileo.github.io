@@ -1,0 +1,51 @@
+---
+layout: post_javascript_journey
+date:   2014-03-02 11:32:00
+categories: [knowladge, javascript, journey]
+tags: [knowladge, JavaScript, GoodParts]
+title: JavaScript Journey - Part 7 - Czym jestem a czy nie jestem oto jest pytanie?
+description: Poznawanie JavaScriptu
+published: true
+---
+
+h1. Ciężka dola JavaScript
+
+Tak naprawdę w JavaScript wszystko jest obiektem poza dwoma wartościami @'undefined'@ i @'null'@ cała reszta jest reprezentowana przez obiekt.
+
+Oczywiście jest sposób aby dowiedzieć się jakiego typu jest dany obiekt poprzez kontrukcje @'typeof'@ jednak nie działa to idealnie tak jakbyśmy sobie to wymarzyli.
+
+h3. Pułapki
+
+Przychodząc z innych języków raczej jesteśmy przyzwyczajeni że jak coś jest jakiegoś typu to takie jest i raczej nie jest to zmienne. Natomiast JS przychodzi do nas z kilkoma niespodziankami. Zdecydowanie trzeba być tego świadomym.
+
+h4. Tablice
+
+Główną niespodzianką jest to że obiekt Array i Object zwracają zawsze typeof 'Object' co w zasadzie jest prawdą bo Array jest Object jak wszystko w JS jednak przydatna ta informacja zdecydowanie nie jest.
+
+Dlatego Array posiada dodatkową metode isArray() której możemy użyć
+
+h5. Uwaga!!!
+
+<pre>
+  Array.isArray() jest dostępna w języku dopiero od wersji ECMAScript 5. Natomiast istnieje możliwość rozszerzenia funkcjonalności Array tak aby metoda ta istniała niezależnie od przeglądarki. Zaintersowanych odsyłam do źródeł tego postu.
+</pre>
+
+Więc jeśli chcemy się dowiedzieć czy obiekt jest tablicą czy zwykłym obiektem musimy zrobić coś w stylu
+
+{% highlight javascript %}
+var tablica = ['hej', 'ho'];
+if (typeof tablica === 'object' && Array.isArray(tablica)) {
+  // tak to jest tablica
+}
+{% endhighlight %}
+
+h4. null
+
+Wcześniej wspomniano że @`null`@ jaki i @`undefined`@ nie są obiektami niestety operator @`typeof`@ nie zawsze jest nam zbyto pomocny i zwraca informacje że @`null`@ jest typem @`Object`@ co jest zdecydowanie błędem języka o którym powinniśmy pamiętać.
+
+
+@Bibliografia i źródła inspiracji@
+
+"JavaScript: Mocne Strony [eng. JavaScript The Good Parts]":http://helion.pl/view/5661U/jscmoc.htm
+
+"Chapter 2: And Then There Was JavaScript":http://yuiblog.com/crockford/
